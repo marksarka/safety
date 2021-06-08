@@ -1,0 +1,16 @@
+--- 
+# This workflow runs Snyk action
+
+name: Example workflow using Snyk
+on: push
+  
+jobs:
+  RunSnyk:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+   
+    - name: Snyk
+      uses: snyk/actions@0.3.0
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
